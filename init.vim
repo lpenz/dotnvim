@@ -10,11 +10,11 @@ Plug 'mitsuhiko/vim-jinja'
 Plug 'w0rp/ale'
 Plug 'jceb/vim-orgmode'
 Plug 'tpope/vim-speeddating'
-Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'milkypostman/vim-togglelist'
+Plug 'tpope/vim-vinegar'
 
 call plug#end()
 
@@ -45,7 +45,7 @@ nnoremap <silent> <F10> :make<CR>
 nnoremap <silent> <F11> :call VimCommanderToggle()<CR>
 imap <silent> <F10> <C-O><F10>
 
-nnoremap <silent> <F12> :NERDTreeToggle<CR>
+nnoremap <silent> <F12> :Lex<CR>
 
 nnoremap <silent> <C-C> :qa!<CR>
 nnoremap <silent> <C-Q> :bd<CR>

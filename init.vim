@@ -14,6 +14,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'milkypostman/vim-togglelist'
 
 call plug#end()
 
@@ -35,6 +36,11 @@ nnoremap <silent> <F5> @q
 nnoremap <silent> <F6> @w
 nnoremap <silent> <F7> :Errors<CR>
 nnoremap <silent> <F8> :CtrlPBuffer<CR>
+nnoremap <silent> <leader>bb :CtrlPBuffer<CR>
+nnoremap <silent> <leader>ff :CtrlP<CR>
+nmap <script> <silent> <F7> :call ToggleLocationList()<CR>
+nmap <script> <silent> <F9> :call ToggleQuickfixList()<CR>
+
 nnoremap <silent> <F10> :make<CR>
 nnoremap <silent> <F11> :call VimCommanderToggle()<CR>
 imap <silent> <F10> <C-O><F10>

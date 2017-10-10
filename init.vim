@@ -15,6 +15,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'milkypostman/vim-togglelist'
 Plug 'tpope/vim-vinegar'
+Plug 'skywind3000/asyncrun.vim'
 
 call plug#end()
 

@@ -16,6 +16,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'milkypostman/vim-togglelist'
 Plug 'tpope/vim-vinegar'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'mhinz/vim-grepper'
 
 call plug#end()
 

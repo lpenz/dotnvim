@@ -55,3 +55,7 @@ nnoremap <leader><tab> <C-^>
 
 nnoremap <leader>v :grep <C-R><C-W> . <CR>
 
+" Visual search
+xnoremap * y/\V<C-R>=substitute(escape(@@,"/\\"),"\n","\\\\n","ge")<CR><CR>
+xnoremap # y?\V<C-R>=substitute(escape(@@,"?\\"),"\n","\\\\n","ge")<CR><CR>
+

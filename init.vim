@@ -11,13 +11,15 @@ Plug 'w0rp/ale'
 Plug 'jceb/vim-orgmode'
 Plug 'tpope/vim-speeddating'
 Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
+" Settings
 set background=dark
 colorscheme solarized
 
-" Keys:
+" Keys
 let mapleader=' '
 nmap <F1> :echo ""<CR>
 imap <F1> <C-O>:echo ""<CR>
@@ -30,6 +32,7 @@ nnoremap <silent> <F4> :cn<CR>zv
 nnoremap <silent> <F5> @q
 nnoremap <silent> <F6> @w
 nnoremap <silent> <F7> :Errors<CR>
+nnoremap <silent> <F8> :CtrlPBuffer<CR>
 nnoremap <silent> <F10> :make<CR>
 nnoremap <silent> <F11> :call VimCommanderToggle()<CR>
 imap <silent> <F10> <C-O><F10>

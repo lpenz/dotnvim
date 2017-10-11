@@ -30,6 +30,10 @@ call plug#end()
 " Settings
 set background=dark
 colorscheme solarized
+set expandtab tabstop=4 shiftwidth=4
+set nowrap
+set autowriteall
+set ignorecase
 
 " Keys
 let mapleader=' '

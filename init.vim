@@ -1,6 +1,6 @@
 " Local configuration
 
-if filereadable(glob("~/.config/nvim.local/init.vim"))
+if filereadable(glob('~/.config/nvim.local/init.vim'))
     exe 'set rtp+=' . expand('~/.config/nvim.local')
     source ~/.config/nvim.local/init.vim
 endif
@@ -36,7 +36,7 @@ set autowriteall
 set ignorecase
 
 " Keys
-let mapleader=' '
+let g:mapleader=' '
 nmap <F1> :echo ""<CR>
 imap <F1> <C-O>:echo ""<CR>
 nnoremap <silent> <leader>fs :update!<CR>

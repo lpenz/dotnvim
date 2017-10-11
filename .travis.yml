@@ -1,8 +1,7 @@
 language: nix
 
 install:
-  - nix-env -i neovim python2.7-neovim
-  - pip install --user ansible vim-vint
+  - nix-env -i neovim python2.7-neovim python2.7-ansible vim-vint
 
 before_script:
   - git clone https://github.com/syngan/vim-vimlint /tmp/vim-vimlint
@@ -10,7 +9,7 @@ before_script:
 
 script:
   # solve issues before checking more files:
-  #- find . -name *.vim -not -path './syntax/*' -not -path './bundle/*' -not -path './plugin/*' -not -path './autoload/plug.vim' -exec sh /tmp/vim-vimlint/bin/vimlint.sh -l /tmp/vim-vimlint -p /tmp/vim-vimlparser -v vimrc gvimrc {} +
-  #- find . -name '*.vim' -exec vint vimrc gvimrc '{}' '+'
+  - find . -name '*.vim' -not -path './autoload/plug.vim' -exec sh /tmp/vim-vimlint/bin/vimlint.sh -l /tmp/vim-vimlint -p /tmp/vim-vimlparser -v vimrc gvimrc '{}' '+'
+  - find . -name '*.vim' -not -path './autoload/plug.vim' -exec vint '{}' '+'
   - ansible-playbook -i localhost, -c local ansible-playbook.yml
 

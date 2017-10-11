@@ -1,6 +1,7 @@
-language: vim
+language: nix
 
 install:
+  - nix-env -i neovim python2.7-neovim
   - pip install --user ansible vim-vint
 
 before_script:

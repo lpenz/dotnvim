@@ -1,7 +1,14 @@
+" Local configuration
+
+if filereadable(glob("~/.config/nvim.local/init.vim"))
+    exe 'set rtp+=' . expand('~/.config/nvim.local')
+    source ~/.config/nvim.local/init.vim
+endif
+
+" Plugin installation
 
 call plug#begin('~/.config/nvim/plugged')
 
-" Plugins will go here in the middle.
 Plug 'altercation/vim-colors-solarized'
 Plug 'will133/vim-dirdiff'
 Plug 'vim-scripts/Align'
@@ -60,9 +67,4 @@ nnoremap <leader>v :grep <C-R><C-W> . <CR>
 " Visual search
 xnoremap * y/\V<C-R>=substitute(escape(@@,"/\\"),"\n","\\\\n","ge")<CR><CR>
 xnoremap # y?\V<C-R>=substitute(escape(@@,"?\\"),"\n","\\\\n","ge")<CR><CR>
-
-" Local configuration
-if filereadable(glob("~/.nvimrc.local"))
-    source ~/.nvimrc.local
-endif
 

@@ -61,3 +61,8 @@ nnoremap <leader>v :grep <C-R><C-W> . <CR>
 xnoremap * y/\V<C-R>=substitute(escape(@@,"/\\"),"\n","\\\\n","ge")<CR><CR>
 xnoremap # y?\V<C-R>=substitute(escape(@@,"?\\"),"\n","\\\\n","ge")<CR><CR>
 
+" Local configuration
+if filereadable(glob("~/.nvimrc.local"))
+    source ~/.nvimrc.local
+endif
+

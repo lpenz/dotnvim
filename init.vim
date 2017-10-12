@@ -13,7 +13,8 @@ Plug 'altercation/vim-colors-solarized'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'milkypostman/vim-togglelist'
 Plug 'skywind3000/asyncrun.vim'
@@ -53,9 +54,9 @@ nnoremap <silent> <F4> :cn<CR>zv
 nnoremap <silent> <F5> @q
 nnoremap <silent> <F6> @w
 nnoremap <silent> <F7> :Errors<CR>
-nnoremap <silent> <F8> :CtrlPBuffer<CR>
-nnoremap <silent> <leader>bb :CtrlPBuffer<CR>
-nnoremap <silent> <leader>ff :CtrlP<CR>
+nnoremap <silent> <F8> :Buffers<CR>
+nnoremap <silent> <leader>bb :Buffers<CR>
+nnoremap <silent> <leader>ff :Files<CR>
 nmap <script> <silent> <F7> :call ToggleLocationList()<CR>
 nmap <script> <silent> <F9> :call ToggleQuickfixList()<CR>
 

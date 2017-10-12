@@ -10,20 +10,22 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
-Plug 'will133/vim-dirdiff'
-Plug 'vim-scripts/Align'
-Plug 'bling/vim-airline'
-Plug 'mitsuhiko/vim-jinja'
-Plug 'w0rp/ale'
-Plug 'jceb/vim-orgmode'
-Plug 'tpope/vim-speeddating'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-fugitive'
+
 Plug 'airblade/vim-gitgutter'
-Plug 'milkypostman/vim-togglelist'
-Plug 'tpope/vim-vinegar'
-Plug 'skywind3000/asyncrun.vim'
+Plug 'bling/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mhinz/vim-grepper'
+Plug 'milkypostman/vim-togglelist'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-vinegar'
+Plug 'vim-scripts/Align'
+Plug 'w0rp/ale'
+Plug 'will133/vim-dirdiff'
+
+Plug 'jceb/vim-orgmode'
+Plug 'mitsuhiko/vim-jinja'
 
 call plug#end()
 

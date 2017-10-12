@@ -59,7 +59,7 @@ nnoremap <silent> <leader>ff :CtrlP<CR>
 nmap <script> <silent> <F7> :call ToggleLocationList()<CR>
 nmap <script> <silent> <F9> :call ToggleQuickfixList()<CR>
 
-nnoremap <silent> <F10> :make<CR>
+nnoremap <silent> <F10> :copen \| AsyncRun -program=make<CR>
 nnoremap <silent> <F11> :call VimCommanderToggle()<CR>
 imap <silent> <F10> <C-O><F10>
 

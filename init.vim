@@ -35,6 +35,9 @@ set nowrap
 set autowriteall
 set ignorecase
 
+" Plugin config
+let g:airline_powerline_fonts = 1
+
 " Keys
 let g:mapleader=' '
 nmap <F1> :echo ""<CR>

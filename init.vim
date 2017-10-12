@@ -40,6 +40,7 @@ set ignorecase
 
 " Plugin config
 let g:airline_powerline_fonts = 1
+let g:netrw_liststyle = 3
 
 " Keys
 let g:mapleader=' '

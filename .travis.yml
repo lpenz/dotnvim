@@ -1,5 +1,12 @@
 language: nix
 
+# omnilint
+sudo: required
+services:
+  - docker
+before_install:
+  - docker pull lpenz/omnilint
+
 install:
   - nix-env -i neovim python2.7-neovim python2.7-ansible vim-vint
 
@@ -12,4 +19,5 @@ script:
   - find . -name '*.vim' -not -path './autoload/plug.vim' -exec sh /tmp/vim-vimlint/bin/vimlint.sh -l /tmp/vim-vimlint -p /tmp/vim-vimlparser -v vimrc gvimrc '{}' '+'
   - find . -name '*.vim' -not -path './autoload/plug.vim' -exec vint '{}' '+'
   - ansible-playbook -i localhost, -c local ansible-playbook.yml
+  - docker run --rm -v "$PWD:$PWD" -e "RWD=$PWD" -e "MY_UID=$UID" lpenz/omnilint
 

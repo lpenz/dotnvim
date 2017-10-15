@@ -33,6 +33,10 @@ Plug 'jceb/vim-orgmode'
 Plug 'mitsuhiko/vim-jinja'
 Plug 'Vimjas/vim-python-pep8-indent'
 
+" Filetype AutoFormat modules
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'lpenz/vim-codefmt-haskell'
 
 call plug#end()
 

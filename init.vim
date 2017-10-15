@@ -9,8 +9,10 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
+" Theme
 Plug 'altercation/vim-colors-solarized'
 
+" Plugins
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -25,6 +27,7 @@ Plug 'vim-scripts/Align'
 Plug 'w0rp/ale'
 Plug 'will133/vim-dirdiff'
 
+" Filetype native syntax and indentation
 Plug 'jceb/vim-orgmode'
 Plug 'mitsuhiko/vim-jinja'
 

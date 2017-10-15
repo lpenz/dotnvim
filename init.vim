@@ -31,6 +31,8 @@ Plug 'will133/vim-dirdiff'
 " Filetype native syntax and indentation
 Plug 'jceb/vim-orgmode'
 Plug 'mitsuhiko/vim-jinja'
+Plug 'Vimjas/vim-python-pep8-indent'
+
 
 call plug#end()
 

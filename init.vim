@@ -45,6 +45,7 @@ set background=dark
 colorscheme solarized
 set expandtab tabstop=4 shiftwidth=4
 set nowrap
+set noswapfile
 set autowriteall
 set ignorecase
 

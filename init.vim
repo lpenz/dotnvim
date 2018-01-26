@@ -96,3 +96,11 @@ nnoremap <leader>v :grep <C-R><C-W> . <CR>
 xnoremap * y/\V<C-R>=substitute(escape(@@,"/\\"),"\n","\\\\n","ge")<CR><CR>
 xnoremap # y?\V<C-R>=substitute(escape(@@,"?\\"),"\n","\\\\n","ge")<CR><CR>
 
+"""
+
+" Local overrides
+
+if filereadable(glob('~/.config/nvim.local/init-after.vim'))
+    source ~/.config/nvim.local/init-after.vim
+endif
+

@@ -58,6 +58,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 let g:netrw_liststyle = 3
 let g:netrw_winsize = 20
+let g:grepper = {}
+let g:grepper.tools = ['rg', 'grep', 'git']
 
 " Keys
 let g:mapleader=' '

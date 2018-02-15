@@ -29,6 +29,7 @@ Plug 'w0rp/ale'
 Plug 'will133/vim-dirdiff'
 
 " Filetype native syntax and indentation
+Plug 'rust-lang/rust.vim'
 Plug 'jceb/vim-orgmode'
 Plug 'mitsuhiko/vim-jinja'
 Plug 'Vimjas/vim-python-pep8-indent'

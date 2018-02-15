@@ -32,6 +32,7 @@ Plug 'will133/vim-dirdiff'
 Plug 'rust-lang/rust.vim'
 Plug 'jceb/vim-orgmode'
 Plug 'mitsuhiko/vim-jinja'
+Plug 'vim-scripts/a-new-txt2tags-syntax'
 Plug 'Vimjas/vim-python-pep8-indent'
 
 " Filetype AutoFormat modules

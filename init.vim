@@ -62,7 +62,7 @@ let g:netrw_liststyle = 3
 let g:netrw_winsize = 20
 let g:grepper = {}
 let g:grepper.tools = ['rg', 'grep', 'git']
-let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,*.o,*.d,*.a,.git,.find.txt,.find.txt.gz,ID,tags,*.pyc,*.rpm,GPATH,GRTAGS,GTAGS"
+let g:DirDiffExcludes = 'CVS,*.class,*.exe,.*.swp,*.o,*.d,*.a,.git,.find.txt,.find.txt.gz,ID,tags,*.pyc,*.rpm,GPATH,GRTAGS,GTAGS'
 
 " Keys
 let g:mapleader=' '

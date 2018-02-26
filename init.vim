@@ -71,6 +71,7 @@ imap <F1> <C-O>:echo ""<CR>
 nnoremap <silent> <leader>fs :update!<CR>
 nnoremap <silent> <F2> :update!<CR>
 imap <silent> <F2> <C-O><F2>
+imap <silent> <M-F2> <C-O><F2>
 nnoremap <silent> <C-P> <C-I>
 nnoremap <silent> <F4> :cn<CR>zv
 nnoremap <silent> <F5> @q
@@ -85,6 +86,7 @@ nmap <script> <silent> <F9> :call ToggleQuickfixList()<CR>
 nnoremap <silent> <F10> :copen \| AsyncRun -program=make<CR>
 nnoremap <silent> <F11> :call VimCommanderToggle()<CR>
 imap <silent> <F10> <C-O><F10>
+imap <silent> <M-F10> <C-O><F10>
 
 nnoremap <silent> <F12> :Lex<CR>
 

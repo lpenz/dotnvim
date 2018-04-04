@@ -34,6 +34,7 @@ Plug 'jceb/vim-orgmode'
 Plug 'mitsuhiko/vim-jinja'
 Plug 'vim-scripts/txt2tags'
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'vim-scripts/scons.vim'
 
 " Filetype AutoFormat modules
 Plug 'google/vim-maktaba'

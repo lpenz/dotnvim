@@ -99,6 +99,9 @@ nnoremap <leader><tab> <C-^>
 
 nnoremap <leader>v :grep <C-R><C-W> . <CR>
 
+" Make ESC leave terminal mode
+tnoremap <Esc> <C-\><C-n>
+
 " Visual search
 xnoremap * y/\V<C-R>=substitute(escape(@@,"/\\"),"\n","\\\\n","ge")<CR><CR>
 xnoremap # y?\V<C-R>=substitute(escape(@@,"?\\"),"\n","\\\\n","ge")<CR><CR>

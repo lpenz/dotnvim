@@ -1,23 +1,22 @@
-language: nix
-
-# omnilint
-sudo: required
-services:
-  - docker
-before_install:
-  - docker pull lpenz/omnilint
-
-install:
-  - nix-env -i neovim python2.7-neovim python2.7-ansible vim-vint
-
-before_script:
-  - git clone https://github.com/syngan/vim-vimlint /tmp/vim-vimlint
-  - git clone https://github.com/ynkdir/vim-vimlparser /tmp/vim-vimlparser
-
-script:
-  # solve issues before checking more files:
-  - find . -name '*.vim' -not -path './autoload/plug.vim' -exec sh /tmp/vim-vimlint/bin/vimlint.sh -l /tmp/vim-vimlint -p /tmp/vim-vimlparser -v vimrc gvimrc '{}' '+'
-  - find . -name '*.vim' -not -path './autoload/plug.vim' -exec vint '{}' '+'
-  - ansible-playbook -i localhost, -c local ansible-playbook.yml
-  - docker run --rm -v "$PWD:$PWD" -e "RWD=$PWD" -e "MY_UID=$UID" lpenz/omnilint
-
+---
+jobs:
+  include:
+    - env: [ ACTION=omnilint ]
+      language: generic
+      install: docker pull lpenz/omnilint
+      script: docker run --rm -v "$PWD:$PWD" -e "RWD=$PWD" -e "MY_UID=$UID" lpenz/omnilint
+    - env: [ ACTION=vim-vint ]
+      language: nix
+      install: nix-env -i neovim python2.7-neovim vim-vint
+      script: find . -name '*.vim' -not -path './autoload/plug.vim' -exec vint '{}' '+'
+    - env: [ ACTION=vimlint ]
+      language: nix
+      install:
+        - nix-env -i neovim python2.7-neovim
+        - git clone https://github.com/ynkdir/vim-vimlparser /tmp/vim-vimlparser
+        - git clone https://github.com/syngan/vim-vimlint /tmp/vim-vimlint
+      script: find . -name '*.vim' -not -path './autoload/plug.vim' -exec sh /tmp/vim-vimlint/bin/vimlint.sh -l /tmp/vim-vimlint -p /tmp/vim-vimlparser -v vimrc gvimrc '{}' '+'
+    - env: [ ACTION=ansible ]
+      language: nix
+      install: nix-env -i neovim python2.7-neovim python2.7-ansible
+      script: ansible-playbook -i localhost, -c local ansible-playbook.yml

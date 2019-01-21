@@ -99,6 +99,8 @@ nnoremap <leader><tab> <C-^>
 
 nnoremap <leader>v :grep <C-R><C-W> . <CR>
 
+nnoremap <silent> <F3> :See<CR>
+
 " Make ESC leave terminal mode
 tnoremap <Esc> <C-\><C-n>
 

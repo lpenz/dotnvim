@@ -25,6 +25,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/Align'
+Plug 'vim-scripts/otf.vim'
 Plug 'w0rp/ale'
 Plug 'will133/vim-dirdiff'
 

@@ -1,13 +1,20 @@
 " Local configuration
 
-if filereadable(glob('~/.config/nvim.local/init.vim'))
-    exe 'set rtp+=' . expand('~/.config/nvim.local')
-    source ~/.config/nvim.local/init.vim
+let $VIMHOME=expand('<sfile>:p:h')
+
+if filereadable(glob("~/.vim.local/vimrc"))
+   exe 'set rtp+=' . expand('~/.vim.local')
+   source ~/.vim.local/vimrc
+endif
+
+if !has('nvim')
+   set nocompatible
+   filetype off
 endif
 
 " Plugin installation
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin($VIMHOME . '/plugged')
 
 " Theme
 Plug 'altercation/vim-colors-solarized'

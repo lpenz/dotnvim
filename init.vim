@@ -37,19 +37,31 @@ Plug 'w0rp/ale'
 Plug 'will133/vim-dirdiff'
 
 " Filetype native syntax and indentation
-Plug 'rust-lang/rust.vim'
 Plug 'jceb/vim-orgmode'
 Plug 'mitsuhiko/vim-jinja'
-Plug 'vim-scripts/txt2tags'
+Plug 'rust-lang/rust.vim'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-scripts/scons.vim'
+Plug 'vim-scripts/txt2tags'
 
 " Filetype AutoFormat modules
+" Add maktaba and codefmt to the runtimepath.
+" (The latter must be installed before it can be used.)
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
 Plug 'lpenz/vim-codefmt-haskell'
+" Also add Glaive, which is used to configure codefmt's maktaba flags. See
+" `:help :Glaive` for usage.
+Plug 'google/vim-glaive'
 
 call plug#end()
+
+filetype plugin indent on
+
+call glaive#Install()
+" Optional: Enable codefmt's default mappings on the <Leader>= prefix.
+Glaive codefmt plugin[mappings]
+"""""
 
 " Settings
 set background=dark
@@ -73,10 +85,27 @@ let g:grepper = {}
 let g:grepper.tools = ['rg', 'grep', 'git']
 let g:DirDiffExcludes = 'CVS,*.class,*.exe,.*.swp,*.o,*.d,*.a,.git,.find.txt,.find.txt.gz,ID,tags,*.pyc,*.rpm,GPATH,GRTAGS,GTAGS'
 
-" Keys
+if v:version >= 700
+	set completeopt=longest,menu
+	set spelllang=pt,en
+end
+
+if v:version >= 730
+    if !isdirectory("/tmp/vim-undo-dir")
+        call mkdir("/tmp/vim-undo-dir", "", 0700)
+    endif
+    set undodir="/tmp/vim-undo-dir"
+    set undofile
+end
+
+
+" Keys:
 let g:mapleader=' '
+
+" Disable help:
 nmap <F1> :echo ""<CR>
 imap <F1> <C-O>:echo ""<CR>
+
 nnoremap <silent> <leader>fs :update!<CR>
 nnoremap <silent> <F2> :update!<CR>
 imap <silent> <F2> <C-O><F2>

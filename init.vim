@@ -22,27 +22,36 @@ Plug 'altercation/vim-colors-solarized'
 " Plugins
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
+Plug 'dbakker/vim-lint'
+Plug 'git://repo.or.cz/vcscommand.git'
+Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'lpenz/vimcommander'
 Plug 'mhinz/vim-grepper'
 Plug 'milkypostman/vim-togglelist'
 Plug 'scrooloose/nerdcommenter'
-Plug 'skywind3000/asyncrun.vim'
+Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/Align'
+Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/otf.vim'
 Plug 'w0rp/ale'
 Plug 'will133/vim-dirdiff'
 
 " Filetype native syntax and indentation
+Plug 'aklt/plantuml-syntax'
+Plug 'elzr/vim-json'
+Plug 'fatih/vim-go'
 Plug 'jceb/vim-orgmode'
 Plug 'mitsuhiko/vim-jinja'
+Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim'
-Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'vim-scripts/scons.vim'
-Plug 'vim-scripts/txt2tags'
+Plug 'syml/rust-codefmt'
 
 " Filetype AutoFormat modules
 " Add maktaba and codefmt to the runtimepath.
@@ -73,17 +82,24 @@ set autowriteall
 set ignorecase
 
 " Plugin config
+let g:loaded_matchparen = 1
+
 let g:ale_sign_column_always = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
-let g:netrw_liststyle = 3
-let g:netrw_winsize = 20
+
+let g:c_gnu = 1
+let g:c_no_comment_fold=1
+let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,*.o,*.d,*.a,.git,.find.txt,.find.txt.gz,ID,tags,*.pyc,*.rpm,GPATH,GRTAGS,GTAGS"
 let g:grepper = {}
 let g:grepper.tools = ['rg', 'grep', 'git']
-let g:DirDiffExcludes = 'CVS,*.class,*.exe,.*.swp,*.o,*.d,*.a,.git,.find.txt,.find.txt.gz,ID,tags,*.pyc,*.rpm,GPATH,GRTAGS,GTAGS'
+let g:NERDTreeIgnore = ['\.pyc$','\.o$','\.hi$','\.dyn_hi$','\.dyn_o$',"^GPATH$","^GRTAGS$","^GTAGS$"]
+let g:netrw_liststyle = 3
+let g:netrw_winsize = 20
+let g:vim_json_syntax_conceal = 0
 
 if v:version >= 700
 	set completeopt=longest,menu
@@ -134,6 +150,8 @@ nnoremap <silent> Q :bd<CR>
 
 nnoremap <leader><tab> <C-^>
 
+nnoremap <leader>syn :echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
+
 nnoremap <leader>v :grep <C-R><C-W> . <CR>
 
 nnoremap <silent> <F3> :See<CR>
@@ -154,7 +172,7 @@ endif
 
 " Local overrides
 
-if filereadable(glob('~/.config/nvim.local/init-after.vim'))
-    source ~/.config/nvim.local/init-after.vim
+if filereadable(glob("~/.vim.local/vimrc.after"))
+    source ~/.vim.local/vimrc.after
 endif
 
